@@ -99,8 +99,8 @@ class Font extends AbstractFont
                 }
             }
 
-            $box['width'] = (int)abs($box[4] - $box[0]);
-            $box['height'] = (int)abs($box[5] - $box[1]);
+            $box['width'] = (float)abs($box[4] - $box[0]) + $this->strokeWidth;
+            $box['height'] = (float)abs($box[5] - $box[1]) + $this->strokeWidth;
 
         } else {
 
@@ -114,8 +114,8 @@ class Font extends AbstractFont
                 $box['height'] = 0;
             } else {
                 // calculate boxsize
-                $box['width'] = strlen($this->text) * $width;
-                $box['height'] = $height;
+                $box['width'] = (strlen($this->text) * $width) + $this->strokeWidth;
+                $box['height'] = $height + $this->strokeWidth;
             }
         }
 
