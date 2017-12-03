@@ -134,8 +134,8 @@ class Font extends AbstractFont
             $box['height'] = 0;
         } else {
             // get boxsize
-            $box['width'] = (int)abs($dimensions['textWidth']);
-            $box['height'] = (int)abs($dimensions['textHeight']);
+            $box['width'] = (int)abs($dimensions['textWidth']) + $this->strokeWidth;
+            $box['height'] = (int)abs($dimensions['textHeight']) + $this->strokeWidth;
         }
 
         return $box;
