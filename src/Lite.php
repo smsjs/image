@@ -1,48 +1,13 @@
 <?php
-namespace PhalApi\PHPMailer;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-/**
- * 邮件工具类
- *
- * - 基于PHPMailer的邮件发送
- *
- *  配置
- *
- * 'PHPMailer' => array(
- *   'email' => array(
- *       'host' => 'smtp.gmail.com',
- *       'username' => 'XXX@gmail.com',
- *       'password' => '******',
- *       'from' => 'XXX@gmail.com',
- *       'fromName' => 'PhalApi团队',
- *       'sign' => '<br/><br/>请不要回复此邮件，谢谢！<br/><br/>-- PhalApi团队敬上 ',
- *   ),
- * ),
- *
- * 示例
- *
- * $mailer = new PHPMailer_Lite(true);
- * $mailer->send('chanzonghuang@gmail.com', 'Test PHPMailer Lite', 'something here ...');
- *
- * @author dogstar <chanzonghuang@gmail.com> 2015-2-14
- */
+namespace PhalApi\Image;
+use LaiBao\Image\ImageManager;
 class Lite
 {
-    protected $debug;
     protected $config;
-    public function __construct($debug = FALSE) {
-        $this->debug = $debug;
-        $this->config = \PhalApi\DI()->config->get('app.PHPMailer.email');
+    public function __construct($config) {
+        $this->config = \PhalApi\DI()->config->get('app.Image');
     }
-    /**
-     * 发送邮件
-     * @param array/string $addresses 待发送的邮箱地址
-     * @param sting $title 标题
-     * @param string $content 内容
-     * @param boolean $isHtml 是否使用HTML格式，默认是
-     * @return boolean 是否成功
-     */
+
     public function send($addresses, $title, $content, $isHtml = TRUE)
     {
         $mail = new PHPMailer;
