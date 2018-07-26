@@ -4,7 +4,7 @@ use LaiBao\Image\ImageManager;
 class Lite
 {
     protected $config;
-    public function __construct($config) {
+    public function __construct($config = Null) {
         $this->config = \PhalApi\DI()->config->get('app.Image');
     }
 
