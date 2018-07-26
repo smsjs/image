@@ -1,14 +1,14 @@
 {
     "name": "pecee/intervention-image",
-    "description": "Image handling and manipulation library with support for Laravel integration, forked to apply bugfixes and addons.",
-    "homepage": "http://image.intervention.io/",
-    "keywords": ["image", "gd", "imagick", "laravel", "watermark", "thumbnail", "pecee"],
+    "description": "",
+    "homepage": "",
+    "keywords": ["image", "gd", "imagick", "thumbnail", "pecee"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Oliver Vogel",
-            "email": "oliver@olivervogel.com",
-            "homepage": "http://olivervogel.com/"
+            "name": "smsjs",
+            "email": "smsjs@163.com",
+            "homepage": ""
         }
     ],
     "require": {
@@ -27,21 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Intervention\\Image\\": "src/Intervention/Image"
+            "laibao\\Image\\": "src"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.3-dev"
-        },
-        "laravel": {
-            "providers": [
-                "Intervention\\Image\\ImageServiceProvider"
-            ],
-            "aliases": {
-                "Image": "Intervention\\Image\\Facades\\Image"
-            }
-        }
-    },
-    "minimum-stability": "stable"
+    }
 }
