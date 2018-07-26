@@ -1,6 +1,7 @@
+
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 class StreamCommand extends AbstractCommand
 {
@@ -8,7 +9,7 @@ class StreamCommand extends AbstractCommand
      * Builds PSR7 stream based on image data. Method uses Guzzle PSR7
      * implementation as easiest choice.
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

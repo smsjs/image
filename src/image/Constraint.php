@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 class Constraint
 {
@@ -17,7 +17,7 @@ class Constraint
     /**
      * Constraint size
      *
-     * @var \Intervention\Image\Size
+     * @var \LaiBao\Image\Size
      */
     private $size;
 
@@ -41,7 +41,7 @@ class Constraint
     /**
      * Returns current size of constraint
      *
-     * @return \Intervention\Image\Size
+     * @return \LaiBao\Image\Size
      */
     public function getSize()
     {

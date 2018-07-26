@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 use Closure;
 
@@ -43,7 +43,7 @@ class ImageManager
      *
      * @param  mixed $data
      *
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function make($data)
     {
@@ -57,7 +57,7 @@ class ImageManager
      * @param  integer $height
      * @param  mixed $background
      *
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function canvas($width, $height, $background = null)
     {
@@ -66,7 +66,7 @@ class ImageManager
 
     /**
      * Create new cached image and run callback
-     * (requires additional package intervention/imagecache)
+     * (requires additional package LaiBao/imagecache)
      *
      * @param Closure $callback
      * @param integer $lifetime
@@ -76,7 +76,7 @@ class ImageManager
      */
     public function cache(Closure $callback, $lifetime = null, $returnObj = false)
     {
-        if (class_exists('Intervention\\Image\\ImageCache')) {
+        if (class_exists('LaiBao\\Image\\ImageCache')) {
             // create imagecache
             $imagecache = new ImageCache($this);
 
@@ -88,27 +88,27 @@ class ImageManager
             return $imagecache->get($lifetime, $returnObj);
         }
 
-        throw new \Intervention\Image\Exception\MissingDependencyException(
-            "Please install package intervention/imagecache before running this function."
+        throw new \LaiBao\Image\Exception\MissingDependencyException(
+            "Please install package LaiBao/imagecache before running this function."
         );
     }
 
     /**
      * Creates a driver instance according to config settings
      *
-     * @return \Intervention\Image\AbstractDriver
+     * @return \LaiBao\Image\AbstractDriver
      */
     private function createDriver()
     {
         if (is_string($this->config['driver'])) {
             $drivername = ucfirst($this->config['driver']);
-            $driverclass = sprintf('Intervention\\Image\\%s\\Driver', $drivername);
+            $driverclass = sprintf('LaiBao\\Image\\%s\\Driver', $drivername);
 
             if (class_exists($driverclass)) {
                 return new $driverclass;
             }
 
-            throw new \Intervention\Image\Exception\NotSupportedException(
+            throw new \LaiBao\Image\Exception\NotSupportedException(
                 "Driver ({$drivername}) could not be instantiated."
             );
         }
@@ -117,7 +117,7 @@ class ImageManager
             return $this->config['driver'];
         }
 
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "Unknown driver type."
         );
     }
@@ -130,8 +130,8 @@ class ImageManager
     private function checkRequirements()
     {
         if ( ! function_exists('finfo_buffer')) {
-            throw new \Intervention\Image\Exception\MissingDependencyException(
-                "PHP Fileinfo extension must be installed/enabled to use Intervention Image."
+            throw new \LaiBao\Image\Exception\MissingDependencyException(
+                "PHP Fileinfo extension must be installed/enabled to use LaiBao Image."
             );
         }
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Intervention\Image\Imagick\Shapes;
+namespace LaiBao\Image\Imagick\Shapes;
 
-use Intervention\Image\Image;
-use Intervention\Image\Imagick\Color;
+use LaiBao\Image\Image;
+use LaiBao\Image\Imagick\Color;
 
-class PolygonShape extends \Intervention\Image\AbstractShape
+class PolygonShape extends \LaiBao\Image\AbstractShape
 {
     /**
      * Array of points of polygon

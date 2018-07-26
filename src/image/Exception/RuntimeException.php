@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image\Exception;
+namespace LaiBao\Image\Exception;
 
 class RuntimeException extends ImageException
 {

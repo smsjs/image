@@ -1,8 +1,8 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-use Intervention\Image\Commands\ExifCommand as BaseCommand;
+use LaiBao\Image\Commands\ExifCommand as BaseCommand;
 
 class ExifCommand extends BaseCommand
 {
@@ -23,7 +23,7 @@ class ExifCommand extends BaseCommand
     /**
      * Read Exif data from the given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

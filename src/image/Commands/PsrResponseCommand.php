@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 use GuzzleHttp\Psr7\Response;
 
@@ -15,7 +15,7 @@ class PsrResponseCommand extends AbstractCommand
      * streams and more "clean" streaming, however drivers has to be updated
      * first.
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

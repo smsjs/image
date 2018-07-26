@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
 class WidenCommand extends ResizeCommand
 {
     /**
      * Resize image proportionally to given width
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

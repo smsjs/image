@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-use Intervention\Image\Imagick\Color;
+use LaiBao\Image\Imagick\Color;
 
-class PixelCommand extends \Intervention\Image\Commands\AbstractCommand
+class PixelCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Draws one pixel to a given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

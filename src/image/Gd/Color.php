@@ -1,8 +1,8 @@
 <?php
 
-namespace Intervention\Image\Gd;
+namespace LaiBao\Image\Gd;
 
-use Intervention\Image\AbstractColor;
+use LaiBao\Image\AbstractColor;
 
 class Color extends AbstractColor
 {
@@ -38,7 +38,7 @@ class Color extends AbstractColor
      * Initiates color object from integer
      *
      * @param  integer $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     public function initFromInteger($value)
     {
@@ -52,7 +52,7 @@ class Color extends AbstractColor
      * Initiates color object from given array
      *
      * @param  array $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     public function initFromArray($array)
     {
@@ -81,7 +81,7 @@ class Color extends AbstractColor
      * Initiates color object from given string
      *
      * @param  string $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     public function initFromString($value)
     {
@@ -99,7 +99,7 @@ class Color extends AbstractColor
      * @param  integer $r
      * @param  integer $g
      * @param  integer $b
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     public function initFromRgb($r, $g, $b)
     {
@@ -116,7 +116,7 @@ class Color extends AbstractColor
      * @param  integer $g
      * @param  integer $b
      * @param  float   $a
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     public function initFromRgba($r, $g, $b, $a = 1)
     {
@@ -130,11 +130,11 @@ class Color extends AbstractColor
      * Initiates color object from given ImagickPixel object
      *
      * @param  ImagickPixel $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     public function initFromObject($value)
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "GD colors cannot init from ImagickPixel objects."
         );
     }

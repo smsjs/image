@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-use Intervention\Image\Size;
+use LaiBao\Image\Size;
 
-class GetSizeCommand extends \Intervention\Image\Commands\AbstractCommand
+class GetSizeCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Reads size of given image instance in pixels
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

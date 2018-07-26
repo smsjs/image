@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Response as IlluminateResponse;
@@ -14,15 +14,15 @@ class ImageServiceProviderLaravel4 extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('intervention/image');
+        $this->package('LaiBao/image');
 
         // try to create imagecache route only if imagecache is present
-        if (class_exists('Intervention\\Image\\ImageCache')) {
+        if (class_exists('LaiBao\\Image\\ImageCache')) {
 
             $app = $this->app;
 
             // load imagecache config
-            $app['config']->package('intervention/imagecache', __DIR__.'/../../../../imagecache/src/config', 'imagecache');
+            $app['config']->package('LaiBao/imagecache', __DIR__.'/../../../../imagecache/src/config', 'imagecache');
             $config = $app['config'];
 
             // create dynamic manipulation route
@@ -107,6 +107,6 @@ class ImageServiceProviderLaravel4 extends ServiceProvider
             return new ImageManager($app['config']->get('image::config'));
         });
 
-        $app->alias('image', 'Intervention\Image\ImageManager');
+        $app->alias('image', 'LaiBao\Image\ImageManager');
     }
 }

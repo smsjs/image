@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class GammaCommand extends \Intervention\Image\Commands\AbstractCommand
+class GammaCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Applies gamma correction to a given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

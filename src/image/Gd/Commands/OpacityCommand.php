@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class OpacityCommand extends \Intervention\Image\Commands\AbstractCommand
+class OpacityCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Defines opacity of an image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

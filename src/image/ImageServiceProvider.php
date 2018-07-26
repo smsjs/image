@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -58,16 +58,16 @@ class ImageServiceProvider extends ServiceProvider
     /**
      * Return ServiceProvider according to Laravel version
      *
-     * @return \Intervention\Image\Provider\ProviderInterface
+     * @return \LaiBao\Image\Provider\ProviderInterface
      */
     private function getProvider()
     {
         if ($this->app instanceof \Laravel\Lumen\Application) {
-            $provider = '\Intervention\Image\ImageServiceProviderLumen';
+            $provider = '\LaiBao\Image\ImageServiceProviderLumen';
         } elseif (version_compare(\Illuminate\Foundation\Application::VERSION, '5.0', '<')) {
-            $provider = '\Intervention\Image\ImageServiceProviderLaravel4';
+            $provider = '\LaiBao\Image\ImageServiceProviderLaravel4';
         } else {
-            $provider = '\Intervention\Image\ImageServiceProviderLaravel5';
+            $provider = '\LaiBao\Image\ImageServiceProviderLaravel5';
         }
 
         return new $provider($this->app);

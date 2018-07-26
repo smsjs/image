@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-class PixelateCommand extends \Intervention\Image\Commands\AbstractCommand
+class PixelateCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Applies a pixelation effect to a given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

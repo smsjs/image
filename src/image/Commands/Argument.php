@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 class Argument
 {
@@ -61,12 +61,12 @@ class Argument
     /**
      * Defines current argument as required
      *
-     * @return \Intervention\Image\Commands\Argument
+     * @return \LaiBao\Image\Commands\Argument
      */
     public function required()
     {
         if ( ! array_key_exists($this->key, $this->command->arguments)) {
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 sprintf("Missing argument %d for %s", $this->key + 1, $this->getCommandName())
             );
         }
@@ -77,7 +77,7 @@ class Argument
     /**
      * Determines that current argument must be of given type
      *
-     * @return \Intervention\Image\Commands\Argument
+     * @return \LaiBao\Image\Commands\Argument
      */
     public function type($type)
     {
@@ -135,7 +135,7 @@ class Argument
 
             $message = isset($message) ? $message : sprintf("Missing argument for %d.", $this->key);
 
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 $message
             );
         }
@@ -146,7 +146,7 @@ class Argument
     /**
      * Determines that current argument value must be numeric between given values
      *
-     * @return \Intervention\Image\Commands\Argument
+     * @return \LaiBao\Image\Commands\Argument
      */
     public function between($x, $y)
     {
@@ -160,7 +160,7 @@ class Argument
         $omega = max($x, $y);
 
         if ($value < $alpha || $value > $omega) {
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 sprintf('Argument %d must be between %s and %s.', $this->key, $x, $y)
             );
         }
@@ -171,7 +171,7 @@ class Argument
     /**
      * Determines that current argument must be over a minimum value
      *
-     * @return \Intervention\Image\Commands\Argument
+     * @return \LaiBao\Image\Commands\Argument
      */
     public function min($value)
     {
@@ -182,7 +182,7 @@ class Argument
         }
 
         if ($v < $value) {
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 sprintf('Argument %d must be at least %s.', $this->key, $value)
             );
         }
@@ -193,7 +193,7 @@ class Argument
     /**
      * Determines that current argument must be under a maxiumum value
      *
-     * @return \Intervention\Image\Commands\Argument
+     * @return \LaiBao\Image\Commands\Argument
      */
     public function max($value)
     {
@@ -204,7 +204,7 @@ class Argument
         }
 
         if ($v > $value) {
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 sprintf('Argument %d may not be greater than %s.', $this->key, $value)
             );
         }

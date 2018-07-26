@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 use GuzzleHttp\Psr7\Stream;
 use Psr\Http\Message\StreamInterface;
@@ -11,7 +11,7 @@ abstract class AbstractDecoder
      * Initiates new image from path in filesystem
      *
      * @param  string $path
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     abstract public function initFromPath($path);
 
@@ -19,7 +19,7 @@ abstract class AbstractDecoder
      * Initiates new image from binary data
      *
      * @param  string $data
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     abstract public function initFromBinary($data);
 
@@ -27,7 +27,7 @@ abstract class AbstractDecoder
      * Initiates new image from GD resource
      *
      * @param  Resource $resource
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     abstract public function initFromGdResource($resource);
 
@@ -35,7 +35,7 @@ abstract class AbstractDecoder
      * Initiates new image from Imagick object
      *
      * @param \Imagick $object
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     abstract public function initFromImagick(\Imagick $object);
 
@@ -60,7 +60,7 @@ abstract class AbstractDecoder
      * Init from fiven URL
      *
      * @param  string $url
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromUrl($url)
     {
@@ -80,7 +80,7 @@ abstract class AbstractDecoder
             return $this->initFromBinary($data);
         }
 
-        throw new \Intervention\Image\Exception\NotReadableException(
+        throw new \LaiBao\Image\Exception\NotReadableException(
             "Unable to init from given url (".$url.")."
         );
     }
@@ -89,7 +89,7 @@ abstract class AbstractDecoder
      * Init from given stream
      *
      * @param StreamInterface|resource $stream
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromStream($stream)
     {
@@ -123,7 +123,7 @@ abstract class AbstractDecoder
             return $this->initFromBinary($data);
         }
 
-        throw new \Intervention\Image\Exception\NotReadableException(
+        throw new \LaiBao\Image\Exception\NotReadableException(
             "Unable to init from given stream"
         );
     }
@@ -153,13 +153,13 @@ abstract class AbstractDecoder
     }
 
     /**
-     * Determines if current source data is Intervention\Image\Image object
+     * Determines if current source data is LaiBao\Image\Image object
      *
      * @return boolean
      */
-    public function isInterventionImage()
+    public function isLaiBaoImage()
     {
-        return is_a($this->data, '\Intervention\Image\Image');
+        return is_a($this->data, '\LaiBao\Image\Image');
     }
 
     /**
@@ -266,12 +266,12 @@ abstract class AbstractDecoder
     }
 
     /**
-     * Initiates new Image from Intervention\Image\Image
+     * Initiates new Image from LaiBao\Image\Image
      *
      * @param  Image $object
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
-    public function initFromInterventionImage($object)
+    public function initFromLaiBaoImage($object)
     {
         return $object;
     }
@@ -302,7 +302,7 @@ abstract class AbstractDecoder
      * Initiates new image from mixed data
      *
      * @param  mixed $data
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function init($data)
     {
@@ -316,8 +316,8 @@ abstract class AbstractDecoder
             case $this->isImagick():
                 return $this->initFromImagick($this->data);
 
-            case $this->isInterventionImage():
-                return $this->initFromInterventionImage($this->data);
+            case $this->isLaiBaoImage():
+                return $this->initFromLaiBaoImage($this->data);
 
             case $this->isSplFileInfo():
                 return $this->initFromPath($this->data->getRealPath());

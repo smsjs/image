@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-class FlipCommand extends \Intervention\Image\Commands\AbstractCommand
+class FlipCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Mirrors an image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

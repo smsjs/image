@@ -1,17 +1,17 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-use Intervention\Image\Image;
-use Intervention\Image\Imagick\Decoder;
-use Intervention\Image\Imagick\Color;
+use LaiBao\Image\Image;
+use LaiBao\Image\Imagick\Decoder;
+use LaiBao\Image\Imagick\Color;
 
-class FillCommand extends \Intervention\Image\Commands\AbstractCommand
+class FillCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Fills image with color or pattern
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
@@ -27,7 +27,7 @@ class FillCommand extends \Intervention\Image\Commands\AbstractCommand
             $source = new Decoder;
             $filling = $source->init($filling);
 
-        } catch (\Intervention\Image\Exception\NotReadableException $e) {
+        } catch (\LaiBao\Image\Exception\NotReadableException $e) {
 
             // set solid color filling
             $filling = new Color($filling);

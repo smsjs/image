@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-class MaskCommand extends \Intervention\Image\Commands\AbstractCommand
+class MaskCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Applies an alpha mask to an image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

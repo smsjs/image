@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 use Closure;
 
-class RectangleCommand extends \Intervention\Image\Commands\AbstractCommand
+class RectangleCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Draws rectangle on given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
@@ -20,7 +20,7 @@ class RectangleCommand extends \Intervention\Image\Commands\AbstractCommand
         $y2 = $this->argument(3)->type('numeric')->required()->value();
         $callback = $this->argument(4)->type('closure')->value();
 
-        $rectangle_classname = sprintf('\Intervention\Image\%s\Shapes\RectangleShape',
+        $rectangle_classname = sprintf('\LaiBao\Image\%s\Shapes\RectangleShape',
             $image->getDriver()->getDriverName());
 
         $rectangle = new $rectangle_classname($x1, $y1, $x2, $y2);

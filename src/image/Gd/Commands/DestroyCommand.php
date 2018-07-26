@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class DestroyCommand extends \Intervention\Image\Commands\AbstractCommand
+class DestroyCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Destroys current image core and frees up memory
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

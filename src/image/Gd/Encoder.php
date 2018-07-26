@@ -1,8 +1,8 @@
 <?php
 
-namespace Intervention\Image\Gd;
+namespace LaiBao\Image\Gd;
 
-class Encoder extends \Intervention\Image\AbstractEncoder
+class Encoder extends \LaiBao\Image\AbstractEncoder
 {
     /**
      * Processes and returns encoded image as JPEG string
@@ -58,7 +58,7 @@ class Encoder extends \Intervention\Image\AbstractEncoder
     protected function processWebp()
     {
         if (!function_exists('imagewebp')) {
-            throw new \Intervention\Image\Exception\NotSupportedException(
+            throw new \LaiBao\Image\Exception\NotSupportedException(
                 "Webp format is not supported by PHP installation."
             );
         }
@@ -79,7 +79,7 @@ class Encoder extends \Intervention\Image\AbstractEncoder
      */
     protected function processTiff()
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "TIFF format is not supported by Gd Driver."
         );
     }
@@ -91,7 +91,7 @@ class Encoder extends \Intervention\Image\AbstractEncoder
      */
     protected function processBmp()
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "BMP format is not supported by Gd Driver."
         );
     }
@@ -103,7 +103,7 @@ class Encoder extends \Intervention\Image\AbstractEncoder
      */
     protected function processIco()
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "ICO format is not supported by Gd Driver."
         );
     }
@@ -115,7 +115,7 @@ class Encoder extends \Intervention\Image\AbstractEncoder
      */
     protected function processPsd()
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "PSD format is not supported by Gd Driver."
         );
     }
@@ -127,7 +127,7 @@ class Encoder extends \Intervention\Image\AbstractEncoder
      */
     protected function processSvg()
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "SVG format is not supported by Gd Driver."
         );
     }

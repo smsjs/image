@@ -1,13 +1,14 @@
+
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 use Closure;
 
 class ImageManagerStatic
 {
     /**
-     * Instance of Intervention\Image\ImageManager
+     * Instance of LaiBao\Image\ImageManager
      *
      * @var ImageManager
      */
@@ -50,7 +51,7 @@ class ImageManagerStatic
      *
      * @param  mixed $data
      *
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public static function make($data)
     {
@@ -64,7 +65,7 @@ class ImageManagerStatic
      * @param  integer $height
      * @param  mixed $background
      *
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public static function canvas($width, $height, $background = null)
     {

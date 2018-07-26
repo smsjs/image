@@ -1,11 +1,11 @@
 <?php
 
-namespace Intervention\Image\Gd\Shapes;
+namespace LaiBao\Image\Gd\Shapes;
 
-use Intervention\Image\Image;
-use Intervention\Image\Gd\Color;
+use LaiBao\Image\Image;
+use LaiBao\Image\Gd\Color;
 
-class PolygonShape extends \Intervention\Image\AbstractShape
+class PolygonShape extends \LaiBao\Image\AbstractShape
 {
     /**
      * Array of points of polygon

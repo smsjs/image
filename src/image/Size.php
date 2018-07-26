@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 use Closure;
 
@@ -12,6 +12,7 @@ class Size
      * @var integer
      */
     public $width;
+
 
     /**
      * Height
@@ -104,7 +105,7 @@ class Size
     public function resize($width, $height, Closure $callback = null)
     {
         if (is_null($width) && is_null($height)) {
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 "Width or height needs to be defined."
             );
         }
@@ -206,7 +207,7 @@ class Size
      * based on the pivot point settings of both sizes.
      *
      * @param  Size   $size
-     * @return \Intervention\Image\Point
+     * @return \LaiBao\Image\Point
      */
     public function relativePosition(Size $size)
     {
@@ -220,7 +221,7 @@ class Size
      * Resize given Size to best fitting size of current size.
      *
      * @param  Size   $size
-     * @return \Intervention\Image\Size
+     * @return \LaiBao\Image\Size
      */
     public function fit(Size $size, $position = 'center')
     {
@@ -273,7 +274,7 @@ class Size
      * @param  string  $position
      * @param  integer $offset_x
      * @param  integer $offset_y
-     * @return \Intervention\Image\Size
+     * @return \LaiBao\Image\Size
      */
     public function align($position, $offset_x = 0, $offset_y = 0)
     {
@@ -358,7 +359,7 @@ class Size
      * Runs constraints on current size
      *
      * @param  Closure $callback
-     * @return \Intervention\Image\Constraint
+     * @return \LaiBao\Image\Constraint
      */
     private function getConstraint(Closure $callback = null)
     {

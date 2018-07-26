@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image\Facades;
+namespace LaiBao\Image\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

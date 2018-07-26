@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
-use Intervention\Image\Response;
+use LaiBao\Image\Response;
 
 class ResponseCommand extends AbstractCommand
 {
     /**
      * Builds HTTP response from given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

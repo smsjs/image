@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-class InterlaceCommand extends \Intervention\Image\Commands\AbstractCommand
+class InterlaceCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Toggles interlaced encoding mode
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

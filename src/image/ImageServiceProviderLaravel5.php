@@ -1,19 +1,19 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 use Illuminate\Support\ServiceProvider;
 
 class ImageServiceProviderLaravel5 extends ServiceProvider
 {
     /**
-     * Determines if Intervention Imagecache is installed
+     * Determines if LaiBao Imagecache is installed
      *
      * @return boolean
      */
     private function cacheIsInstalled()
     {
-        return class_exists('Intervention\\Image\\ImageCache');
+        return class_exists('LaiBao\\Image\\ImageCache');
     }
 
     /**
@@ -27,7 +27,7 @@ class ImageServiceProviderLaravel5 extends ServiceProvider
             __DIR__.'/../../config/config.php' => config_path('image.php')
         ]);
 
-        // setup intervention/imagecache if package is installed
+        // setup LaiBao/imagecache if package is installed
         $this->cacheIsInstalled() ? $this->bootstrapImageCache() : null;
     }
 
@@ -51,7 +51,7 @@ class ImageServiceProviderLaravel5 extends ServiceProvider
             return new ImageManager($app['config']->get('image'));
         });
 
-        $app->alias('image', 'Intervention\Image\ImageManager');
+        $app->alias('image', 'LaiBao\Image\ImageManager');
     }
 
     /**
@@ -81,7 +81,7 @@ class ImageServiceProviderLaravel5 extends ServiceProvider
 
             // route to access template applied image file
             $app['router']->get(config('imagecache.route').'/{template}/{filename}', [
-                'uses' => 'Intervention\Image\ImageCacheController@getResponse',
+                'uses' => 'LaiBao\Image\ImageCacheController@getResponse',
                 'as' => 'imagecache'
             ])->where(['filename' => $filename_pattern]);
         }

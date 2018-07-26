@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class SharpenCommand extends \Intervention\Image\Commands\AbstractCommand
+class SharpenCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Sharpen image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-class LimitColorsCommand extends \Intervention\Image\Commands\AbstractCommand
+class LimitColorsCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Reduces colors of a given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

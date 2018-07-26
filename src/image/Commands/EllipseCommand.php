@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 use Closure;
 
-class EllipseCommand extends \Intervention\Image\Commands\AbstractCommand
+class EllipseCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Draws ellipse on given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
@@ -20,7 +20,7 @@ class EllipseCommand extends \Intervention\Image\Commands\AbstractCommand
         $y = $this->argument(3)->type('numeric')->required()->value();
         $callback = $this->argument(4)->type('closure')->value();
 
-        $ellipse_classname = sprintf('\Intervention\Image\%s\Shapes\EllipseShape',
+        $ellipse_classname = sprintf('\LaiBao\Image\%s\Shapes\EllipseShape',
             $image->getDriver()->getDriverName());
 
         $ellipse = new $ellipse_classname($width, $height);

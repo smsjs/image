@@ -1,16 +1,16 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-use Intervention\Image\Point;
-use Intervention\Image\Size;
+use LaiBao\Image\Point;
+use LaiBao\Image\Size;
 
-class CropCommand extends \Intervention\Image\Commands\AbstractCommand
+class CropCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Crop an image instance
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
@@ -21,7 +21,7 @@ class CropCommand extends \Intervention\Image\Commands\AbstractCommand
         $y = $this->argument(3)->type('digit')->value();
 
         if (is_null($width) || is_null($height)) {
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 "Width and height of cutout needs to be defined."
             );
         }

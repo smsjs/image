@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-use Intervention\Image\Imagick\Color;
+use LaiBao\Image\Imagick\Color;
 
-class PickColorCommand extends \Intervention\Image\Commands\AbstractCommand
+class PickColorCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Read color information from a certain position
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

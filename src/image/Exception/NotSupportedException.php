@@ -1,6 +1,11 @@
+
+
+
+
+
 <?php
 
-namespace Intervention\Image\Exception;
+namespace LaiBao\Image\Exception;
 
 class NotSupportedException extends ImageException
 {

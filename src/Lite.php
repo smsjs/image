@@ -1,85 +1,77 @@
 <?php
-
-namespace Intervention\Image;
-
-use Illuminate\Support\ServiceProvider;
-
-class ImageServiceProvider extends ServiceProvider
+namespace PhalApi\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+/**
+ * 邮件工具类
+ *
+ * - 基于PHPMailer的邮件发送
+ *
+ *  配置
+ *
+ * 'PHPMailer' => array(
+ *   'email' => array(
+ *       'host' => 'smtp.gmail.com',
+ *       'username' => 'XXX@gmail.com',
+ *       'password' => '******',
+ *       'from' => 'XXX@gmail.com',
+ *       'fromName' => 'PhalApi团队',
+ *       'sign' => '<br/><br/>请不要回复此邮件，谢谢！<br/><br/>-- PhalApi团队敬上 ',
+ *   ),
+ * ),
+ *
+ * 示例
+ *
+ * $mailer = new PHPMailer_Lite(true);
+ * $mailer->send('chanzonghuang@gmail.com', 'Test PHPMailer Lite', 'something here ...');
+ *
+ * @author dogstar <chanzonghuang@gmail.com> 2015-2-14
+ */
+class Lite
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
-    /**
-     * Actual provider
-     *
-     * @var \Illuminate\Support\ServiceProvider
-     */
-    protected $provider;
-
-    /**
-     * Create a new service provider instance.
-     *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
-     * @return void
-     */
-    public function __construct($app)
-    {
-        parent::__construct($app);
-
-        $this->provider = $this->getProvider();
+    protected $debug;
+    protected $config;
+    public function __construct($debug = FALSE) {
+        $this->debug = $debug;
+        $this->config = \PhalApi\DI()->config->get('app.PHPMailer.email');
     }
-
     /**
-     * Bootstrap the application events.
-     *
-     * @return void
+     * 发送邮件
+     * @param array/string $addresses 待发送的邮箱地址
+     * @param sting $title 标题
+     * @param string $content 内容
+     * @param boolean $isHtml 是否使用HTML格式，默认是
+     * @return boolean 是否成功
      */
-    public function boot()
+    public function send($addresses, $title, $content, $isHtml = TRUE)
     {
-        if (method_exists($this->provider, 'boot')) {
-            return $this->provider->boot();
+        $mail = new PHPMailer;
+        $cfg = $this->config;
+        $mail->isSMTP();
+        $mail->Host = $cfg['host'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $cfg['username'];
+        $mail->Password = $cfg['password'];
+        $mail->CharSet = 'utf-8';
+        $mail->From = $cfg['username'];
+        $mail->FromName = $cfg['fromName'];
+        $addresses = is_array($addresses) ? $addresses : array($addresses);
+        foreach ($addresses as $address) {
+            $mail->addAddress($address);
         }
-    }
-
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        return $this->provider->register();
-    }
-
-    /**
-     * Return ServiceProvider according to Laravel version
-     *
-     * @return \Intervention\Image\Provider\ProviderInterface
-     */
-    private function getProvider()
-    {
-        if ($this->app instanceof \Laravel\Lumen\Application) {
-            $provider = '\Intervention\Image\ImageServiceProviderLumen';
-        } elseif (version_compare(\Illuminate\Foundation\Application::VERSION, '5.0', '<')) {
-            $provider = '\Intervention\Image\ImageServiceProviderLaravel4';
-        } else {
-            $provider = '\Intervention\Image\ImageServiceProviderLaravel5';
+        $mail->WordWrap = 50;
+        $mail->isHTML($isHtml);
+        $mail->Subject = trim($title);
+        $mail->Body = $content . $cfg['sign'];
+        if (!$mail->send()) {
+            if ($this->debug) {
+                \PhalApi\DI()->logger->debug('Fail to send email with error: ' . $mail->ErrorInfo);
+            }
+            return false;
         }
-
-        return new $provider($this->app);
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['image'];
+        if ($this->debug) {
+            \PhalApi\DI()->logger->debug('Succeed to send email', array('addresses' => $addresses, 'title' => $title));
+        }
+        return true;
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Intervention\Image\Imagick\Shapes;
+namespace LaiBao\Image\Imagick\Shapes;
 
-use Intervention\Image\Image;
+use LaiBao\Image\Image;
 
 class CircleShape extends EllipseShape
 {

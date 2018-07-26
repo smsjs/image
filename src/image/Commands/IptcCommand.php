@@ -1,19 +1,19 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 class IptcCommand extends AbstractCommand
 {
     /**
      * Read Iptc data from the given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
     {
         if ( ! function_exists('iptcparse')) {
-            throw new \Intervention\Image\Exception\NotSupportedException(
+            throw new \LaiBao\Image\Exception\NotSupportedException(
                 "Reading Iptc data is not supported by this PHP installation."
             );
         }

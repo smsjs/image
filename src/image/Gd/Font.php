@@ -1,10 +1,10 @@
 <?php
 
-namespace Intervention\Image\Gd;
+namespace LaiBao\Image\Gd;
 
-use Intervention\Image\AbstractFont;
-use Intervention\Image\Exception\NotSupportedException;
-use Intervention\Image\Image;
+use LaiBao\Image\AbstractFont;
+use LaiBao\Image\Exception\NotSupportedException;
+use LaiBao\Image\Image;
 
 class Font extends AbstractFont
 {

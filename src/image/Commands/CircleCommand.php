@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 use Closure;
 
-class CircleCommand extends \Intervention\Image\Commands\AbstractCommand
+class CircleCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Draw a circle centered on given image
      *
-     * @param  \Intervention\Image\image $image
+     * @param  \LaiBao\Image\image $image
      * @return boolean
      */
     public function execute($image)
@@ -19,7 +19,7 @@ class CircleCommand extends \Intervention\Image\Commands\AbstractCommand
         $y = $this->argument(2)->type('numeric')->required()->value();
         $callback = $this->argument(3)->type('closure')->value();
 
-        $circle_classname = sprintf('\Intervention\Image\%s\Shapes\CircleShape',
+        $circle_classname = sprintf('\LaiBao\Image\%s\Shapes\CircleShape',
             $image->getDriver()->getDriverName());
 
         $circle = new $circle_classname($diameter);

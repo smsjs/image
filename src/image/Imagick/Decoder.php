@@ -1,16 +1,16 @@
 <?php
 
-namespace Intervention\Image\Imagick;
+namespace LaiBao\Image\Imagick;
 
-use Intervention\Image\Image;
+use LaiBao\Image\Image;
 
-class Decoder extends \Intervention\Image\AbstractDecoder
+class Decoder extends \LaiBao\Image\AbstractDecoder
 {
     /**
      * Initiates new image from path in filesystem
      *
      * @param  string $path
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromPath($path)
     {
@@ -23,7 +23,7 @@ class Decoder extends \Intervention\Image\AbstractDecoder
             $core->setImageType(defined('\Imagick::IMGTYPE_TRUECOLORALPHA') ? \Imagick::IMGTYPE_TRUECOLORALPHA : \Imagick::IMGTYPE_TRUECOLORMATTE);
 
         } catch (\ImagickException $e) {
-            throw new \Intervention\Image\Exception\NotReadableException(
+            throw new \LaiBao\Image\Exception\NotReadableException(
                 "Unable to read image from path ({$path}).",
                 0,
                 $e
@@ -41,11 +41,11 @@ class Decoder extends \Intervention\Image\AbstractDecoder
      * Initiates new image from GD resource
      *
      * @param  Resource $resource
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromGdResource($resource)
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             'Imagick driver is unable to init from GD resource.'
         );
     }
@@ -54,7 +54,7 @@ class Decoder extends \Intervention\Image\AbstractDecoder
      * Initiates new image from Imagick object
      *
      * @param  Imagick $object
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromImagick(\Imagick $object)
     {
@@ -69,7 +69,7 @@ class Decoder extends \Intervention\Image\AbstractDecoder
      * Initiates new image from binary data
      *
      * @param  string $data
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromBinary($binary)
     {
@@ -80,7 +80,7 @@ class Decoder extends \Intervention\Image\AbstractDecoder
             $core->readImageBlob($binary);
 
         } catch (\ImagickException $e) {
-            throw new \Intervention\Image\Exception\NotReadableException(
+            throw new \LaiBao\Image\Exception\NotReadableException(
                 "Unable to read image from binary data.",
                 0,
                 $e

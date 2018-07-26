@@ -1,8 +1,8 @@
 <?php
 
-namespace Intervention\Image\Gd\Shapes;
+namespace LaiBao\Image\Gd\Shapes;
 
-use Intervention\Image\Image;
+use LaiBao\Image\Image;
 
 class CircleShape extends EllipseShape
 {

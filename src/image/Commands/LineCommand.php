@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 use Closure;
 
-class LineCommand extends \Intervention\Image\Commands\AbstractCommand
+class LineCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Draws line on given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
@@ -20,7 +20,7 @@ class LineCommand extends \Intervention\Image\Commands\AbstractCommand
         $y2 = $this->argument(3)->type('numeric')->required()->value();
         $callback = $this->argument(4)->type('closure')->value();
 
-        $line_classname = sprintf('\Intervention\Image\%s\Shapes\LineShape',
+        $line_classname = sprintf('\LaiBao\Image\%s\Shapes\LineShape',
             $image->getDriver()->getDriverName());
 
         $line = new $line_classname($x2, $y2);

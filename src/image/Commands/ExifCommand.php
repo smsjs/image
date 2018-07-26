@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 class ExifCommand extends AbstractCommand
 {
@@ -10,7 +10,7 @@ class ExifCommand extends AbstractCommand
      * Note: Windows PHP Users - in order to use this method you will need to
      * enable the mbstring and exif extensions within the php.ini file.
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

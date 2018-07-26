@@ -1,8 +1,8 @@
 <?php
 
-namespace Intervention\Image\Gd;
+namespace LaiBao\Image\Gd;
 
-class Driver extends \Intervention\Image\AbstractDriver
+class Driver extends \LaiBao\Image\AbstractDriver
 {
     /**
      * Creates new instance of driver
@@ -13,7 +13,7 @@ class Driver extends \Intervention\Image\AbstractDriver
     public function __construct(Decoder $decoder = null, Encoder $encoder = null)
     {
         if ( ! $this->coreAvailable()) {
-            throw new \Intervention\Image\Exception\NotSupportedException(
+            throw new \LaiBao\Image\Exception\NotSupportedException(
                 "GD Library extension not available with this PHP installation."
             );
         }
@@ -28,13 +28,13 @@ class Driver extends \Intervention\Image\AbstractDriver
      * @param  integer $width
      * @param  integer $height
      * @param  mixed   $background
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function newImage($width, $height, $background = null)
     {
         // create empty resource
         $core = imagecreatetruecolor($width, $height);
-        $image = new \Intervention\Image\Image(new static, $core);
+        $image = new \LaiBao\Image\Image(new static, $core);
 
         // set background color
         $background = new Color($background);

@@ -1,21 +1,21 @@
 <?php
 
-namespace Intervention\Image\Gd;
+namespace LaiBao\Image\Gd;
 
-use Intervention\Image\Image;
+use LaiBao\Image\Image;
 
-class Decoder extends \Intervention\Image\AbstractDecoder
+class Decoder extends \LaiBao\Image\AbstractDecoder
 {
     /**
      * Initiates new image from path in filesystem
      *
      * @param  string $path
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromPath($path)
     {
         if ( ! file_exists($path)) {
-            throw new \Intervention\Image\Exception\NotReadableException(
+            throw new \LaiBao\Image\Exception\NotReadableException(
                 "Unable to find file ({$path})."
             );
         }
@@ -46,7 +46,7 @@ class Decoder extends \Intervention\Image\AbstractDecoder
             case 'image/webp':
             case 'image/x-webp':
                 if ( ! function_exists('imagecreatefromwebp')) {
-                    throw new \Intervention\Image\Exception\NotReadableException(
+                    throw new \LaiBao\Image\Exception\NotReadableException(
                         "Unsupported image type. GD/PHP installation does not support WebP format."
                     );
                 }
@@ -54,13 +54,13 @@ class Decoder extends \Intervention\Image\AbstractDecoder
                 break;
 
             default:
-                throw new \Intervention\Image\Exception\NotReadableException(
+                throw new \LaiBao\Image\Exception\NotReadableException(
                     "Unsupported image type. GD driver is only able to decode JPG, PNG, GIF or WebP files."
                 );
         }
 
         if (empty($core)) {
-            throw new \Intervention\Image\Exception\NotReadableException(
+            throw new \LaiBao\Image\Exception\NotReadableException(
                 "Unable to decode image from file ({$path})."
             );
         }
@@ -79,7 +79,7 @@ class Decoder extends \Intervention\Image\AbstractDecoder
      * Initiates new image from GD resource
      *
      * @param  Resource $resource
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromGdResource($resource)
     {
@@ -90,11 +90,11 @@ class Decoder extends \Intervention\Image\AbstractDecoder
      * Initiates new image from Imagick object
      *
      * @param  Imagick $object
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromImagick(\Imagick $object)
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "Gd driver is unable to init from Imagick object."
         );
     }
@@ -103,14 +103,14 @@ class Decoder extends \Intervention\Image\AbstractDecoder
      * Initiates new image from binary data
      *
      * @param  string $data
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function initFromBinary($binary)
     {
         $resource = @imagecreatefromstring($binary);
 
         if ($resource === false) {
-             throw new \Intervention\Image\Exception\NotReadableException(
+             throw new \LaiBao\Image\Exception\NotReadableException(
                 "Unable to init from given binary data."
             );
         }

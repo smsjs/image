@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 abstract class AbstractColor
 {
@@ -8,7 +8,7 @@ abstract class AbstractColor
      * Initiates color object from integer
      *
      * @param  integer $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     abstract public function initFromInteger($value);
 
@@ -16,7 +16,7 @@ abstract class AbstractColor
      * Initiates color object from given array
      *
      * @param  array $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     abstract public function initFromArray($value);
 
@@ -24,7 +24,7 @@ abstract class AbstractColor
      * Initiates color object from given string
      *
      * @param  string $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     abstract public function initFromString($value);
 
@@ -32,7 +32,7 @@ abstract class AbstractColor
      * Initiates color object from given ImagickPixel object
      *
      * @param  ImagickPixel $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     abstract public function initFromObject($value);
 
@@ -42,7 +42,7 @@ abstract class AbstractColor
      * @param  integer $r
      * @param  integer $g
      * @param  integer $b
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     abstract public function initFromRgb($r, $g, $b);
 
@@ -53,7 +53,7 @@ abstract class AbstractColor
      * @param  integer $g
      * @param  integer $b
      * @param  float   $a
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     abstract public function initFromRgba($r, $g, $b, $a);
 
@@ -109,7 +109,7 @@ abstract class AbstractColor
      * Parses given value as color
      *
      * @param  mixed $value
-     * @return \Intervention\Image\AbstractColor
+     * @return \LaiBao\Image\AbstractColor
      */
     public function parse($value)
     {
@@ -136,7 +136,7 @@ abstract class AbstractColor
                 break;
 
             default:
-                throw new \Intervention\Image\Exception\NotReadableException(
+                throw new \LaiBao\Image\Exception\NotReadableException(
                     "Color format ({$value}) cannot be read."
                 );
         }
@@ -172,7 +172,7 @@ abstract class AbstractColor
                 return $this;
 
             default:
-                throw new \Intervention\Image\Exception\NotSupportedException(
+                throw new \LaiBao\Image\Exception\NotSupportedException(
                     "Color format ({$type}) is not supported."
                 );
         }
@@ -216,7 +216,7 @@ abstract class AbstractColor
             $result[2] = ($matches[3] >= 0 && $matches[3] <= 255) ? intval($matches[3]) : 0;
             $result[3] = ($matches[4] >= 0 && $matches[4] <= 1) ? $matches[4] : 0;
         } else {
-            throw new \Intervention\Image\Exception\NotReadableException(
+            throw new \LaiBao\Image\Exception\NotReadableException(
                 "Unable to read color ({$value})."
             );
         }

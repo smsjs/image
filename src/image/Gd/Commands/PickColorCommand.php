@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-use Intervention\Image\Gd\Color;
+use LaiBao\Image\Gd\Color;
 
-class PickColorCommand extends \Intervention\Image\Commands\AbstractCommand
+class PickColorCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Read color information from a certain position
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

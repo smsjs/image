@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 use Closure;
 
-class PolygonCommand extends \Intervention\Image\Commands\AbstractCommand
+class PolygonCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Draw a polygon on given image
      *
-     * @param  \Intervention\Image\image $image
+     * @param  \LaiBao\Image\image $image
      * @return boolean
      */
     public function execute($image)
@@ -21,18 +21,18 @@ class PolygonCommand extends \Intervention\Image\Commands\AbstractCommand
 
         // check if number if coordinates is even
         if ($vertices_count % 2 !== 0) {
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 "The number of given polygon vertices must be even."
             );
         }
 
         if ($vertices_count < 6) {
-            throw new \Intervention\Image\Exception\InvalidArgumentException(
+            throw new \LaiBao\Image\Exception\InvalidArgumentException(
                 "You must have at least 3 points in your array."
             );
         }
         
-        $polygon_classname = sprintf('\Intervention\Image\%s\Shapes\PolygonShape',
+        $polygon_classname = sprintf('\LaiBao\Image\%s\Shapes\PolygonShape',
             $image->getDriver()->getDriverName());
 
         $polygon = new $polygon_classname($points);

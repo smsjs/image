@@ -1,8 +1,8 @@
 <?php
 
-namespace Intervention\Image\Imagick;
+namespace LaiBao\Image\Imagick;
 
-class Encoder extends \Intervention\Image\AbstractEncoder
+class Encoder extends \LaiBao\Image\AbstractEncoder
 {
     /**
      * Processes and returns encoded image as JPEG string
@@ -75,7 +75,7 @@ class Encoder extends \Intervention\Image\AbstractEncoder
     protected function processWebp()
     {
         if (!\Imagick::queryFormats('WEBP')) {
-            throw new \Intervention\Image\Exception\NotSupportedException(
+            throw new \LaiBao\Image\Exception\NotSupportedException(
                 "Webp format is not supported by Imagick installation."
             );
         }

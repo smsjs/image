@@ -1,14 +1,14 @@
 <?php
 
-namespace Intervention\Image\Commands;
+namespace LaiBao\Image\Commands;
 
 use Closure;
 
-class TextCommand extends \Intervention\Image\Commands\AbstractCommand
+class TextCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Write text on given image
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
@@ -18,7 +18,7 @@ class TextCommand extends \Intervention\Image\Commands\AbstractCommand
         $y = $this->argument(2)->type('numeric')->value(0);
         $callback = $this->argument(3)->type('closure')->value();
 
-        $fontclassname = sprintf('\Intervention\Image\%s\Font',
+        $fontclassname = sprintf('\LaiBao\Image\%s\Font',
             $image->getDriver()->getDriverName());
 
         $font = new $fontclassname($text);

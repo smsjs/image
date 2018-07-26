@@ -1,11 +1,11 @@
 <?php
 
-namespace Intervention\Image\Imagick\Shapes;
+namespace LaiBao\Image\Imagick\Shapes;
 
-use Intervention\Image\Image;
-use Intervention\Image\Imagick\Color;
+use LaiBao\Image\Image;
+use LaiBao\Image\Imagick\Color;
 
-class RectangleShape extends \Intervention\Image\AbstractShape
+class RectangleShape extends \LaiBao\Image\AbstractShape
 {
     /**
      * X-Coordinate of top-left point

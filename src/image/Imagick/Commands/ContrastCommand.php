@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-class ContrastCommand extends \Intervention\Image\Commands\AbstractCommand
+class ContrastCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Changes contrast of image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

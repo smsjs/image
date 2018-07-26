@@ -1,20 +1,20 @@
 <?php
 
-namespace Intervention\Image;
+namespace LaiBao\Image;
 
 abstract class AbstractDriver
 {
     /**
      * Decoder instance to init images from
      *
-     * @var \Intervention\Image\AbstractDecoder
+     * @var \LaiBao\Image\AbstractDecoder
      */
     public $decoder;
 
     /**
      * Image encoder instance
      *
-     * @var \Intervention\Image\AbstractEncoder
+     * @var \LaiBao\Image\AbstractEncoder
      */
     public $encoder;
 
@@ -24,7 +24,7 @@ abstract class AbstractDriver
      * @param  integer $width
      * @param  integer $height
      * @param  string  $background
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     abstract public function newImage($width, $height, $background);
 
@@ -57,7 +57,7 @@ abstract class AbstractDriver
      * Initiates new image from given input
      *
      * @param  mixed $data
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function init($data)
     {
@@ -70,7 +70,7 @@ abstract class AbstractDriver
      * @param  Image   $image
      * @param  string  $format
      * @param  integer $quality
-     * @return \Intervention\Image\Image
+     * @return \LaiBao\Image\Image
      */
     public function encode($image, $format, $quality)
     {
@@ -83,7 +83,7 @@ abstract class AbstractDriver
      * @param  Image  $image
      * @param  string $name
      * @param  array $arguments
-     * @return \Intervention\Image\Commands\AbstractCommand
+     * @return \LaiBao\Image\Commands\AbstractCommand
      */
     public function executeCommand($image, $name, $arguments)
     {
@@ -103,8 +103,8 @@ abstract class AbstractDriver
     private function getCommandClassName($name)
     {
         $drivername = $this->getDriverName();
-        $classnameLocal = sprintf('\Intervention\Image\%s\Commands\%sCommand', $drivername, ucfirst($name));
-        $classnameGlobal = sprintf('\Intervention\Image\Commands\%sCommand', ucfirst($name));
+        $classnameLocal = sprintf('\LaiBao\Image\%s\Commands\%sCommand', $drivername, ucfirst($name));
+        $classnameGlobal = sprintf('\LaiBao\Image\Commands\%sCommand', ucfirst($name));
 
         if (class_exists($classnameLocal)) {
             return $classnameLocal;
@@ -112,7 +112,7 @@ abstract class AbstractDriver
             return $classnameGlobal;
         }
 
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "Command ({$name}) is not available for driver ({$drivername})."
         );
     }

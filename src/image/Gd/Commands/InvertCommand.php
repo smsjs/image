@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class InvertCommand extends \Intervention\Image\Commands\AbstractCommand
+class InvertCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Inverts colors of an image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

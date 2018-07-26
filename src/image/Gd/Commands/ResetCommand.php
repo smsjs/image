@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class ResetCommand extends \Intervention\Image\Commands\AbstractCommand
+class ResetCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Resets given image to its backup state
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
@@ -28,7 +28,7 @@ class ResetCommand extends \Intervention\Image\Commands\AbstractCommand
             return true;
         }
 
-        throw new \Intervention\Image\Exception\RuntimeException(
+        throw new \LaiBao\Image\Exception\RuntimeException(
             "Backup not available. Call backup() before reset()."
         );
     }

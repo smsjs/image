@@ -1,11 +1,11 @@
 <?php
 
-namespace Intervention\Image\Gd\Shapes;
+namespace LaiBao\Image\Gd\Shapes;
 
-use Intervention\Image\Image;
-use Intervention\Image\Gd\Color;
+use LaiBao\Image\Image;
+use LaiBao\Image\Gd\Color;
 
-class LineShape extends \Intervention\Image\AbstractShape
+class LineShape extends \LaiBao\Image\AbstractShape
 {
     /**
      * Starting point x-coordinate of line
@@ -66,7 +66,7 @@ class LineShape extends \Intervention\Image\AbstractShape
      */
     public function width($width)
     {
-        throw new \Intervention\Image\Exception\NotSupportedException(
+        throw new \LaiBao\Image\Exception\NotSupportedException(
             "Line width is not supported by GD driver."
         );
     }

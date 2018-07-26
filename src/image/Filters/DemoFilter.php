@@ -1,6 +1,6 @@
 <?php
 
-namespace Intervention\Image\Filters;
+namespace LaiBao\Image\Filters;
 
 class DemoFilter implements FilterInterface
 {
@@ -29,10 +29,10 @@ class DemoFilter implements FilterInterface
     /**
      * Applies filter effects to given image
      *
-     * @param  \Intervention\Image\Image $image
-     * @return \Intervention\Image\Image
+     * @param  \LaiBao\Image\Image $image
+     * @return \LaiBao\Image\Image
      */
-    public function applyFilter(\Intervention\Image\Image $image)
+    public function applyFilter(\LaiBao\Image\Image $image)
     {
         $image->pixelate($this->size);
         $image->greyscale();

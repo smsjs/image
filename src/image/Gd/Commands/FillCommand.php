@@ -1,16 +1,16 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-use Intervention\Image\Gd\Decoder;
-use Intervention\Image\Gd\Color;
+use LaiBao\Image\Gd\Decoder;
+use LaiBao\Image\Gd\Color;
 
-class FillCommand extends \Intervention\Image\Commands\AbstractCommand
+class FillCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Fills image with color or pattern
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
@@ -31,7 +31,7 @@ class FillCommand extends \Intervention\Image\Commands\AbstractCommand
             imagesettile($image->getCore(), $tile->getCore());
             $filling = IMG_COLOR_TILED;
 
-        } catch (\Intervention\Image\Exception\NotReadableException $e) {
+        } catch (\LaiBao\Image\Exception\NotReadableException $e) {
 
             // set solid color filling
             $color = new Color($filling);

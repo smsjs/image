@@ -1,13 +1,14 @@
+
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class BackupCommand extends \Intervention\Image\Commands\AbstractCommand
+class BackupCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Saves a backups of current state of image core
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

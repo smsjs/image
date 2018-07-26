@@ -1,10 +1,10 @@
 <?php
 
-namespace Intervention\Image\Imagick;
+namespace LaiBao\Image\Imagick;
 
-use Intervention\Image\AbstractFont;
-use Intervention\Image\Exception\RuntimeException;
-use Intervention\Image\Image;
+use LaiBao\Image\AbstractFont;
+use LaiBao\Image\Exception\RuntimeException;
+use LaiBao\Image\Image;
 
 class Font extends AbstractFont
 {
@@ -119,7 +119,7 @@ class Font extends AbstractFont
         if ($this->hasApplicableFontFile()) {
             $draw->setFont($this->file);
         } else {
-            throw new \Intervention\Image\Exception\RuntimeException(
+            throw new \LaiBao\Image\Exception\RuntimeException(
                 "Font file must be provided to apply text to image."
             );
         }

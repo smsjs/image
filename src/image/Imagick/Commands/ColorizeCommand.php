@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-class ColorizeCommand extends \Intervention\Image\Commands\AbstractCommand
+class ColorizeCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Changes balance of different RGB color channels
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

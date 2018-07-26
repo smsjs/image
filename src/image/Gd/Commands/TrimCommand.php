@@ -1,15 +1,15 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-use Intervention\Image\Gd\Color;
+use LaiBao\Image\Gd\Color;
 
 class TrimCommand extends ResizeCommand
 {
     /**
      * Trims away parts of an image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

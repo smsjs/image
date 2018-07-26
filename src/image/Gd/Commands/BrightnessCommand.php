@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class BrightnessCommand extends \Intervention\Image\Commands\AbstractCommand
+class BrightnessCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Changes image brightness
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

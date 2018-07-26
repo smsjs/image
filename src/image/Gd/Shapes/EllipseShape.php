@@ -1,11 +1,11 @@
 <?php
 
-namespace Intervention\Image\Gd\Shapes;
+namespace LaiBao\Image\Gd\Shapes;
 
-use Intervention\Image\Image;
-use Intervention\Image\Gd\Color;
+use LaiBao\Image\Image;
+use LaiBao\Image\Gd\Color;
 
-class EllipseShape extends \Intervention\Image\AbstractShape
+class EllipseShape extends \LaiBao\Image\AbstractShape
 {
     /**
      * Width of ellipse in pixels

@@ -1,14 +1,14 @@
 <?php
 
-namespace Intervention\Image\Filters;
+namespace LaiBao\Image\Filters;
 
 interface FilterInterface
 {
     /**
      * Applies filter to given image
      *
-     * @param  \Intervention\Image\Image $image
-     * @return \Intervention\Image\Image
+     * @param  \LaiBao\Image\Image $image
+     * @return \LaiBao\Image\Image
      */
-    public function applyFilter(\Intervention\Image\Image $image);
+    public function applyFilter(\LaiBao\Image\Image $image);
 }

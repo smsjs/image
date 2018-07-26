@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class GreyscaleCommand extends \Intervention\Image\Commands\AbstractCommand
+class GreyscaleCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Turns an image into a greyscale version
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Imagick\Commands;
+namespace LaiBao\Image\Imagick\Commands;
 
-class InsertCommand extends \Intervention\Image\Commands\AbstractCommand
+class InsertCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Insert another image into given image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

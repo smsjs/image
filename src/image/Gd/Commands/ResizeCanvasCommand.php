@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class ResizeCanvasCommand extends \Intervention\Image\Commands\AbstractCommand
+class ResizeCanvasCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Resizes image boundaries
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)

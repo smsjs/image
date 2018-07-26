@@ -1,13 +1,13 @@
 <?php
 
-namespace Intervention\Image\Gd\Commands;
+namespace LaiBao\Image\Gd\Commands;
 
-class BlurCommand extends \Intervention\Image\Commands\AbstractCommand
+class BlurCommand extends \LaiBao\Image\Commands\AbstractCommand
 {
     /**
      * Applies blur effect on image
      *
-     * @param  \Intervention\Image\Image $image
+     * @param  \LaiBao\Image\Image $image
      * @return boolean
      */
     public function execute($image)
