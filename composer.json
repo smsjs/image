@@ -23,7 +23,6 @@
     "suggest": {
         "ext-gd": "to use GD library based image processing.",
         "ext-imagick": "to use Imagick based image processing.",
-        "intervention/imagecache": "Caching extension for the Intervention Image library"
     },
     "autoload": {
         "psr-4": {
