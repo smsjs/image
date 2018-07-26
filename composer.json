@@ -17,7 +17,6 @@
         "guzzlehttp/psr7": "~1.1"
     },
     "require-dev": {
-        "mockery/mockery": "~0.9.2"
     },
     "suggest": {
         "ext-gd": "to use GD library based image processing.",
